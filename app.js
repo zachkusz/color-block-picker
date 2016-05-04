@@ -14,8 +14,8 @@ for (var i = 0; i < array.length; i++) {
   var initialColor = pickColor();
   $('#color-namer').append('<p>Please click on '+ initialColor + '.</p>');
 
-    //red button
-    $('#container').on('click', '.red', function(){
+    //all buttons
+    $('#container').on('click', 'div', function(){
       //checks to see if this button was the one that the game is
       //asking to be clicked
       if (initialColor == $(this).data('color') ){
@@ -26,39 +26,6 @@ for (var i = 0; i < array.length; i++) {
         initialColor + '.</p>');
       } else {
         //corrects the user on a misclick
-        $('#color-namer > p').replaceWith('<p>Nope! Click ' +
-        initialColor + '.</p>');
-      }
-    });
-
-    //yellow button
-    $('#container').on('click', '.yellow', function(){
-      if (initialColor == $(this).data('color') ){
-        initialColor = pickColor();
-        $('#color-namer > p').replaceWith('<p>The new color to click is ' + initialColor + '.</p>');
-      } else {
-        $('#color-namer > p').replaceWith('<p>Nope! Click ' +
-        initialColor + '.</p>');
-      }
-    });
-
-    //green button
-    $('#container').on('click', '.green', function(){
-      if (initialColor == $(this).data('color') ){
-        initialColor = pickColor();
-        $('#color-namer > p').replaceWith('<p>The new color to click is ' + initialColor + '.</p>');
-      } else {
-        $('#color-namer > p').replaceWith('<p>Nope! Click ' +
-        initialColor + '.</p>');
-      }
-    });
-
-    //blue buton
-    $('#container').on('click', '.blue', function(){
-      if (initialColor == $(this).data('color') ){
-        initialColor = pickColor();
-        $('#color-namer > p').replaceWith('<p>The new color to click is ' + initialColor + '.</p>');
-      } else {
         $('#color-namer > p').replaceWith('<p>Nope! Click ' +
         initialColor + '.</p>');
       }
