@@ -2,22 +2,12 @@ $(document).ready(function(){
   //sets variable for ease of reference when appending
   $el = $('#container').children().last();
 
-  //appends 4 buttons each with a diferent color, id and color data
-  $('#container').append('<div class="red"></div>');
-  $el.append('<button id="red"></button>');
-  $('#container > .red').data('color', 'red');
-
-  $('#container').append('<div class="yellow"></div>');
-  $el.append('<button id="yellow"></button>');
-  $('#container > .yellow').data('color', 'yellow');
-
-  $('#container').append('<div class="blue"></div>');
-  $el.append('<button id="blue"></button>');
-  $('#container > .blue').data('color', 'blue');
-
-  $('#container').append('<div class="green"></div>');
-  $el.append('<button id="green"></button>');
-  $('#container > .green').data('color', 'green');
+//appends 4 colors to the dom
+var array = ['yellow', 'red', 'blue', 'green'];
+for (var i = 0; i < array.length; i++) {
+  $('#container').append('<div class="' + array[i] + '"></div>');
+  $('.' + array[i]).data('color', array[i]);
+}
 
   //sets the first random color and appends it to the dom so the user
   //can see what color to click
